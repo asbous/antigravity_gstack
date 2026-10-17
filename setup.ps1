@@ -14,8 +14,29 @@
     Set GSTACK_GIT_BASH to a bash.exe to use instead of Git for Windows' own
     (GSTACK_BASH is its deprecated alias).
 #>
-Set-StrictMode -Version Latest
-$ErrorActionPreference = 'Stop'
+# Antigravity IDE native dispatch
+$isAntigravity = ($args -contains '--host' -and ($args -contains 'antigravity' -or $args -contains 'agy' -or $args -contains 'antigravity-ide')) -or ($args -contains '-host' -and ($args -contains 'antigravity' -or $args -contains 'agy'))
+
+if ($isAntigravity) {
+    if (-not (Get-Command node -CommandType Application -ErrorAction SilentlyContinue)) {
+        Write-Host 'Antigravity setup requires Node.js on PATH (winget install --id OpenJS.NodeJS.LTS -e).'
+        exit 1
+    }
+    & node (Join-Path $PSScriptRoot 'bin\setup-antigravity.js') @args
+    exit $LASTEXITCODE
+}
+
+$hasNode = Get-Command node -CommandType Application -ErrorAction SilentlyContinue
+$hasBun = Get-Command bun -CommandType Application -ErrorAction SilentlyContinue
+$hasGit = Get-Command git -CommandType Application -ErrorAction SilentlyContinue
+
+# If bun is missing but Node is present and no explicit external host was passed, default to Antigravity
+if (-not $hasBun -and $hasNode -and (-not ($args -contains '--host' -or $args -contains '-host'))) {
+    Write-Host 'Bun was not found on PATH, but Node.js is available.'
+    Write-Host 'Defaulting to native Antigravity IDE & Gemini Flash setup...'
+    & node (Join-Path $PSScriptRoot 'bin\setup-antigravity.js') @args
+    exit $LASTEXITCODE
+}
 
 $missing = @(
     @{ Cmd = 'git';  Name = 'Git for Windows'; Id = 'Git.Git' },

@@ -1,6 +1,26 @@
 import type { TemplateContext } from '../types';
 
 export function generateAskUserFormat(ctx: TemplateContext): string {
+  if (ctx.host === 'agy') {
+    return `## Antigravity Interactive Inquiry Protocol
+
+When requiring human architectural choices, confirmation, or direction:
+1. **Interactive Inquiries (\`ask_question\`)**:
+   If the \`ask_question\` tool is available, invoke it directly with clean question text and structured option choices.
+2. **Turn-Level Markdown Multiple-Choice Protocol**:
+   Present an explicit decision brief formatted clearly in Markdown within the conversation turn before proceeding:
+   - **Header & Scope**: Clear title (\`D<N>\`) and summary of what is being decided.
+   - **ELI10 & Stakes**: Plain English explanation (stakes of choosing poorly).
+   - **Numbered Choices**:
+     - \`1) [Recommended] <Option Title>\`: Rationale and immediate advantage.
+     - \`2) <Option Title>\`: Trade-offs and alternative approach.
+   - **Trade-offs Matrix**: Direct comparison (Pros/Cons or Completeness score X/10).
+   - **Direct Inquiry**: "Which option should we proceed with? (Reply with number or custom input)".
+   - **STOP**: Complete all independent read-only inspection first, then emit the inquiry and wait for the developer's response.
+3. **Execution Checklist Discipline**:
+   Maintain and print a live Execution Checklist (\`[ ] Pending\`, \`[/] In Progress\`, \`[x] Completed\`) after completing each distinct phase.`;
+  }
+
   // Q3 (#2719, PR #2729): office-hours asks open-ended diagnostic questions, which have no option set.
   const openQuestions = ctx.skillName === 'office-hours';
   const planReview = ['plan-ceo-review', 'plan-eng-review', 'plan-design-review', 'plan-devex-review'].includes(ctx.skillName);

@@ -9,6 +9,8 @@
     "make-pdf": "./make-pdf/dist/pdf"
   },
   "scripts": {
+    "setup:antigravity": "node bin/setup-antigravity.js",
+    "build:antigravity": "node scripts/build-antigravity.js",
     "build": "bash scripts/build.sh",
     "build:cso": "bash scripts/build-cso.sh",
     "format:cso": "prettier --write 'lib/cso/*.ts'",
@@ -76,7 +78,7 @@
     "html-to-vdom": "0.7.0",
     "marked": "^18.0.11",
     "playwright": "^1.62.1",
-    "sharp": "^0.35.4",
+    "sharp": "0.35.5",
     "socks": "^2.8.9"
   },
   "engines": {

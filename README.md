@@ -20,7 +20,9 @@ I'm [Garry Tan](https://x.com/garrytan), President & CEO of [Y Combinator](https
 
 Same person. Different era. The difference is the tooling.
 
-**gstack is how I do it.** It turns Claude Code into a virtual engineering team — a CEO who rethinks the product, an eng manager who locks architecture, a designer who catches AI slop, a reviewer who finds production bugs, a QA lead who opens a real browser, a security officer who runs OWASP + STRIDE audits, and a release engineer who ships the PR. Twenty-three specialists and eight power tools, all slash commands, all Markdown, all free, MIT license.
+**gstack is my answer.** It turns modern AI coding environments into a virtual engineering team — a CEO who rethinks the product, an eng manager who locks architecture, a designer who catches AI slop, a reviewer who finds production bugs, a QA lead who opens a real browser, a security officer who runs OWASP + STRIDE audits, and a release engineer who ships the PR. Fifty-seven specialist roles, all slash commands, all Markdown, all free, MIT license.
+
+> **NEW: Google Antigravity IDE + Gemini Flash Support:** gstack has been refactored for native execution in Google Antigravity IDE powered by Google's Gemini Flash model family, with zero vendor lock-in. See **[ANTIGRAVITY.md](ANTIGRAVITY.md)** for architecture and usage.
 
 This is my open source software factory. I use it every day. I'm sharing it because these tools should be available to everyone.
 
@@ -28,11 +30,21 @@ Fork it. Improve it. Make it yours. And if you want to hate on free open source 
 
 **Who this is for:**
 - **Founders and CEOs** — especially technical ones who still want to ship
-- **First-time Claude Code users** — structured roles instead of a blank prompt
+- **Antigravity IDE & Gemini Flash builders** — structured multi-pass engineering workflows
+- **First-time AI agent users** — structured roles instead of a blank prompt
 - **Tech leads and staff engineers** — rigorous review, QA, and release automation on every PR
 
 ## Quick start
 
+### For Google Antigravity IDE (Gemini Flash)
+```bash
+npm run setup:antigravity
+# or on Windows PowerShell:
+.\setup.ps1 --host antigravity
+```
+Then use `/office-hours`, `/plan-ceo-review`, `/review`, `/qa`, or `/ship` directly in Antigravity chat! See [ANTIGRAVITY.md](ANTIGRAVITY.md).
+
+### For Claude Code / Codex
 1. Install gstack (about 30 seconds of setup — see below)
 2. Run `/office-hours` — describe what you're building
 3. Run `/plan-ceo-review` on any feature idea
