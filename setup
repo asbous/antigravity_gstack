@@ -3846,10 +3846,16 @@ if [ "$INSTALL_AGY" -eq 1 ]; then
     link_agy_skill_dirs "$SOURCE_GSTACK_DIR" "$AGY_SKILLS"
     _activate_runtime_root create_agy_runtime_root "$SOURCE_GSTACK_DIR" "$AGY_GSTACK"
     _setup_arm_publish agy global - "$AGY_SKILLS" "$AGY_GSTACK" -
-    echo "gstack ready (agy)."
+
+    # Also configure Antigravity IDE native workspace layout (.agent/ & .agents/)
+    if command -v node >/dev/null 2>&1; then
+      ( cd "$SOURCE_GSTACK_DIR" && node bin/setup-antigravity.js --no-browser >/dev/null 2>&1 || true )
+    fi
+
+    echo "gstack ready (antigravity / agy)."
     echo "  browse: $BROWSE_BIN"
     _browser_hint
-    echo "  agy skills: $AGY_SKILLS (invoke as /gstack-<skill>)"
+    echo "  antigravity skills: $AGY_SKILLS and .agent/skills/ (invoke as /<skill>)"
   fi
 fi
 

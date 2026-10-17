@@ -1,0 +1,1349 @@
+{
+  "/autoplan": {
+    "command": "/autoplan",
+    "name": "autoplan",
+    "category": "Plan-Mode Reviews",
+    "role": "Executive Review Orchestrator",
+    "description": "Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles.",
+    "triggers": [
+      "run all reviews",
+      "automatic review pipeline",
+      "auto plan review"
+    ],
+    "path": ".agent/skills/autoplan/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/benchmark": {
+    "command": "/benchmark",
+    "name": "benchmark",
+    "category": "Operational & Memory",
+    "role": "Web Performance & Core Web Vitals Engineer",
+    "description": "Web performance regression detection.",
+    "triggers": [
+      "web performance benchmark",
+      "check page speed",
+      "detect page performance regression"
+    ],
+    "path": ".agent/skills/benchmark/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/benchmark-models": {
+    "command": "/benchmark-models",
+    "name": "benchmark-models",
+    "category": "Operational & Memory",
+    "role": "AI Benchmarking Specialist",
+    "description": "Cross-model benchmark for gstack skills.",
+    "triggers": [
+      "cross model benchmark",
+      "compare claude gpt gemini",
+      "benchmark skill across models",
+      "which model should I use"
+    ],
+    "path": ".agent/skills/benchmark-models/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/browse": {
+    "command": "/browse",
+    "name": "browse",
+    "category": "Browser & Automation",
+    "role": "Browser Automation & Headless Chromium Operator",
+    "description": "\"Drive a real browser through Aside: open a page, read it, click through a flow, take screenshots, check console errors. \"",
+    "triggers": [
+      "browse a page",
+      "open this url",
+      "take page screenshot"
+    ],
+    "path": ".agent/skills/browse/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/canary": {
+    "command": "/canary",
+    "name": "canary",
+    "category": "Release & Deploy",
+    "role": "Production Telemetry & Canary Monitor",
+    "description": "Post-deploy canary monitoring.",
+    "triggers": [
+      "monitor after deploy",
+      "canary check",
+      "watch for errors post-deploy"
+    ],
+    "path": ".agent/skills/canary/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/careful": {
+    "command": "/careful",
+    "name": "careful",
+    "category": "Safety & Scoping",
+    "role": "Destructive Command Guardrail",
+    "description": "Safety guardrails for destructive commands.",
+    "triggers": [
+      "be careful",
+      "warn before destructive",
+      "safety mode"
+    ],
+    "path": ".agent/skills/careful/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/claude-code": {
+    "command": "/claude-code",
+    "name": "claude-code",
+    "category": "Implementation & Quality",
+    "role": "Independent LLM Reviewer (Claude)",
+    "description": "Claude Code CLI second opinion for non-Claude Code hosts. Review a diff, challenge a change for failure modes, or consult Claude with read-only repo access and session continuity. Use for \"claude review\", \"claude challenge\", \"ask claude\", or an explicit Claude Code second opinion.",
+    "triggers": [
+      "claude review",
+      "claude challenge",
+      "ask claude"
+    ],
+    "path": ".agent/skills/claude-code/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/codex": {
+    "command": "/codex",
+    "name": "codex",
+    "category": "Implementation & Quality",
+    "role": "Independent LLM Reviewer (Codex)",
+    "description": "OpenAI Codex CLI wrapper — three modes.",
+    "triggers": [
+      "codex review",
+      "second opinion",
+      "outside voice challenge"
+    ],
+    "path": ".agent/skills/codex/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/context-restore": {
+    "command": "/context-restore",
+    "name": "context-restore",
+    "category": "Operational & Memory",
+    "role": "Session State Restorer",
+    "description": "Restore working context saved earlier by /context-save.",
+    "triggers": [
+      "resume where i left off",
+      "restore context",
+      "where was i",
+      "pick up where i left off",
+      "context restore"
+    ],
+    "path": ".agent/skills/context-restore/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/context-save": {
+    "command": "/context-save",
+    "name": "context-save",
+    "category": "Operational & Memory",
+    "role": "Session Context Architect",
+    "description": "Save working context.",
+    "triggers": [
+      "save progress",
+      "save state",
+      "save my work",
+      "context save"
+    ],
+    "path": ".agent/skills/context-save/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/cso": {
+    "command": "/cso",
+    "name": "cso",
+    "category": "Operational & Memory",
+    "role": "Chief Security Officer",
+    "description": "\"Security audit: supported static findings; qualified profiles add reproduction and repair candidates. \"",
+    "triggers": [
+      "security audit",
+      "check for vulnerabilities",
+      "owasp review"
+    ],
+    "path": ".agent/skills/cso/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/design-consultation": {
+    "command": "/design-consultation",
+    "name": "design-consultation",
+    "category": "Plan-Mode Reviews",
+    "role": "Design Systems Architect",
+    "description": "\"Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview... \"",
+    "triggers": [
+      "design system",
+      "create a brand",
+      "design from scratch"
+    ],
+    "path": ".agent/skills/design-consultation/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/design-html": {
+    "command": "/design-html",
+    "name": "design-html",
+    "category": "Implementation & Quality",
+    "role": "Pretext-Native Frontend Specialist",
+    "description": "\"Design finalization: generates production-quality Pretext-native HTML/CSS. \"",
+    "triggers": [
+      "build the design",
+      "code the mockup",
+      "make design real"
+    ],
+    "path": ".agent/skills/design-html/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/design-review": {
+    "command": "/design-review",
+    "name": "design-review",
+    "category": "Implementation & Quality",
+    "role": "Design QA Lead & Visual Systems Auditor",
+    "description": "\"Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. \"",
+    "triggers": [
+      "visual design audit",
+      "design qa",
+      "fix design issues"
+    ],
+    "path": ".agent/skills/design-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/design-shotgun": {
+    "command": "/design-shotgun",
+    "name": "design-shotgun",
+    "category": "Implementation & Quality",
+    "role": "Exploratory UI/UX Designer",
+    "description": "\"Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. \"",
+    "triggers": [
+      "explore design variants",
+      "show me design options",
+      "visual design brainstorm"
+    ],
+    "path": ".agent/skills/design-shotgun/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/deslop-shared-libs": {
+    "command": "/deslop-shared-libs",
+    "name": "deslop-shared-libs",
+    "category": "Implementation & Quality",
+    "role": "Refactoring & Architecture Specialist",
+    "description": "Find worthwhile shared-code extractions in recent work.",
+    "triggers": [
+      "find code worth sharing",
+      "shared-code extraction opportunities"
+    ],
+    "path": ".agent/skills/deslop-shared-libs/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/devex-review": {
+    "command": "/devex-review",
+    "name": "devex-review",
+    "category": "Implementation & Quality",
+    "role": "Developer Experience Auditor",
+    "description": "Live developer experience audit.",
+    "triggers": [
+      "live dx audit",
+      "test developer experience",
+      "measure onboarding time"
+    ],
+    "path": ".agent/skills/devex-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/diagram": {
+    "command": "/diagram",
+    "name": "diagram",
+    "category": "Safety & Scoping",
+    "role": "Visual Architecture & Diagramming Specialist",
+    "description": "\"Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open on excalidraw.com, and rendered SVG + PNG. \"",
+    "triggers": [
+      "make a diagram",
+      "draw a diagram",
+      "create a flowchart",
+      "diagram this",
+      "visualize this flow",
+      "architecture diagram"
+    ],
+    "path": ".agent/skills/diagram/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/document-generate": {
+    "command": "/document-generate",
+    "name": "document-generate",
+    "category": "Release & Deploy",
+    "role": "Diataxis Documentation Architect",
+    "description": "Generate missing documentation from scratch for a feature, module, or entire project.",
+    "triggers": [
+      "write docs for this",
+      "generate documentation",
+      "document this feature",
+      "create a tutorial",
+      "write a how-to",
+      "explain this module",
+      "docs for this project"
+    ],
+    "path": ".agent/skills/document-generate/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/document-release": {
+    "command": "/document-release",
+    "name": "document-release",
+    "category": "Release & Deploy",
+    "role": "Technical Documentation Lead",
+    "description": "Release documentation audit.",
+    "triggers": [
+      "update docs after ship",
+      "document what changed",
+      "post-ship docs"
+    ],
+    "path": ".agent/skills/document-release/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/eval-plan": {
+    "command": "/eval-plan",
+    "name": "eval-plan",
+    "category": "Operational & Memory",
+    "role": "Empirical Evaluation Architect",
+    "description": "Preregister a paid eval (bars, arms, decoys, stop rules), dry-run it at zero cost, then run a three-item priced pilot whose spend table gates approval.",
+    "triggers": [
+      "plan an eval",
+      "preregister an eval",
+      "how much will this eval cost",
+      "pilot the eval"
+    ],
+    "path": ".agent/skills/eval-plan/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/freeze": {
+    "command": "/freeze",
+    "name": "freeze",
+    "category": "Safety & Scoping",
+    "role": "Directory Scope Enforcer",
+    "description": "Restrict file edits to a specific directory for the session.",
+    "triggers": [
+      "freeze edits to directory",
+      "lock editing scope",
+      "restrict file changes"
+    ],
+    "path": ".agent/skills/freeze/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/gstack-upgrade": {
+    "command": "/gstack-upgrade",
+    "name": "gstack-upgrade",
+    "category": "Release & Deploy",
+    "role": "Platform Maintenance Engineer",
+    "description": "Upgrade gstack to the latest version.",
+    "triggers": [
+      "upgrade gstack",
+      "update gstack version",
+      "get latest gstack"
+    ],
+    "path": ".agent/skills/gstack-upgrade/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/guard": {
+    "command": "/guard",
+    "name": "guard",
+    "category": "Safety & Scoping",
+    "role": "Composite Safety & Guardrail Controller",
+    "description": "\"Full safety mode: destructive command warnings + directory-scoped edits. \"",
+    "triggers": [
+      "full safety mode",
+      "guard against mistakes",
+      "maximum safety"
+    ],
+    "path": ".agent/skills/guard/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/health": {
+    "command": "/health",
+    "name": "health",
+    "category": "Operational & Memory",
+    "role": "Codebase Health & Static Analysis Auditor",
+    "description": "Code quality dashboard.",
+    "triggers": [
+      "code health check",
+      "quality dashboard",
+      "how healthy is codebase"
+    ],
+    "path": ".agent/skills/health/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/investigate": {
+    "command": "/investigate",
+    "name": "investigate",
+    "category": "Implementation & Quality",
+    "role": "Senior Systems Debugger & Root Cause Investigator",
+    "description": "Systematic debugging with root cause investigation.",
+    "triggers": [
+      "debug this",
+      "fix this bug",
+      "why is this broken",
+      "root cause analysis",
+      "investigate this error"
+    ],
+    "path": ".agent/skills/investigate/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ios-clean": {
+    "command": "/ios-clean",
+    "name": "ios-clean",
+    "category": "iOS Live-Device QA",
+    "role": "iOS Release Packaging Specialist",
+    "description": "\"Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. \"",
+    "triggers": [
+      "clean the ios debug bridge",
+      "remove debugbridge",
+      "strip the gstack ios instrumentation"
+    ],
+    "path": ".agent/skills/ios-clean/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ios-design-review": {
+    "command": "/ios-design-review",
+    "name": "ios-design-review",
+    "category": "iOS Live-Device QA",
+    "role": "Apple HIG Design Specialist",
+    "description": "Visual design audit for iOS apps on real hardware.",
+    "triggers": [
+      "review the ios design",
+      "audit the iphone app visuals",
+      "design qa the ios app"
+    ],
+    "path": ".agent/skills/ios-design-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ios-fix": {
+    "command": "/ios-fix",
+    "name": "ios-fix",
+    "category": "iOS Live-Device QA",
+    "role": "Autonomous iOS Bug Fixer",
+    "description": "Autonomous iOS bug fixer.",
+    "triggers": [
+      "fix this ios bug",
+      "patch the iphone app",
+      "auto-fix the ios issue"
+    ],
+    "path": ".agent/skills/ios-fix/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ios-qa": {
+    "command": "/ios-qa",
+    "name": "ios-qa",
+    "category": "iOS Live-Device QA",
+    "role": "iOS Live-Device QA Specialist",
+    "description": "Live-device iOS QA for SwiftUI apps.",
+    "triggers": [
+      "ios qa",
+      "test the iphone app",
+      "test the ipad app",
+      "test my ios app",
+      "find bugs on the device",
+      "qa the ios app"
+    ],
+    "path": ".agent/skills/ios-qa/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ios-sync": {
+    "command": "/ios-sync",
+    "name": "ios-sync",
+    "category": "iOS Live-Device QA",
+    "role": "iOS Debug Bridge Specialist",
+    "description": "Regenerate the iOS debug bridge against the latest upstream gstack templates.",
+    "triggers": [
+      "resync the ios debug bridge",
+      "regenerate ios accessors",
+      "update the gstack ios instrumentation"
+    ],
+    "path": ".agent/skills/ios-sync/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/land-and-deploy": {
+    "command": "/land-and-deploy",
+    "name": "land-and-deploy",
+    "category": "Release & Deploy",
+    "role": "Deployment & Site Reliability Engineer",
+    "description": "Land and deploy workflow.",
+    "triggers": [
+      "merge and deploy",
+      "land the pr",
+      "ship to production"
+    ],
+    "path": ".agent/skills/land-and-deploy/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/landing-report": {
+    "command": "/landing-report",
+    "name": "landing-report",
+    "category": "Release & Deploy",
+    "role": "Release Operations Lead",
+    "description": "Read-only queue dashboard for workspace-aware ship.",
+    "triggers": [
+      "landing report",
+      "version queue",
+      "ship queue",
+      "what version comes next",
+      "show open PR versions"
+    ],
+    "path": ".agent/skills/landing-report/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/learn": {
+    "command": "/learn",
+    "name": "learn",
+    "category": "Operational & Memory",
+    "role": "Organizational Learning & Memory Manager",
+    "description": "Manage project learnings.",
+    "triggers": [
+      "show learnings",
+      "what have we learned",
+      "manage project learnings"
+    ],
+    "path": ".agent/skills/learn/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/make-pdf": {
+    "command": "/make-pdf",
+    "name": "make-pdf",
+    "category": "Safety & Scoping",
+    "role": "Typesetting & Publication Specialist",
+    "description": "Turn any markdown file into a publication-quality PDF.",
+    "triggers": [
+      "markdown to pdf",
+      "generate pdf",
+      "make pdf",
+      "export pdf"
+    ],
+    "path": ".agent/skills/make-pdf/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/office-hours": {
+    "command": "/office-hours",
+    "name": "office-hours",
+    "category": "Plan-Mode Reviews",
+    "role": "YC Partner & Product Strategist",
+    "description": "YC Office Hours — two modes.",
+    "triggers": [
+      "brainstorm this",
+      "is this worth building",
+      "help me think through",
+      "office hours"
+    ],
+    "path": ".agent/skills/office-hours/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/open-gstack-browser": {
+    "command": "/open-gstack-browser",
+    "name": "open-gstack-browser",
+    "category": "Browser & Automation",
+    "role": "Interactive Browser Navigator",
+    "description": "Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.",
+    "triggers": [
+      "open gstack browser",
+      "launch chromium",
+      "show me the browser"
+    ],
+    "path": ".agent/skills/open-gstack-browser/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/pair-agent": {
+    "command": "/pair-agent",
+    "name": "pair-agent",
+    "category": "Browser & Automation",
+    "role": "Remote Agent Pairing Coordinator",
+    "description": "Pair a remote AI agent with your browser.",
+    "triggers": [
+      "pair with agent",
+      "connect remote agent",
+      "share my browser"
+    ],
+    "path": ".agent/skills/pair-agent/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/plan-ceo-review": {
+    "command": "/plan-ceo-review",
+    "name": "plan-ceo-review",
+    "category": "Plan-Mode Reviews",
+    "role": "Founder / Chief Executive Officer Reviewer",
+    "description": "CEO/founder-mode plan review.",
+    "triggers": [
+      "think bigger",
+      "expand scope",
+      "strategy review",
+      "rethink this plan"
+    ],
+    "path": ".agent/skills/plan-ceo-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/plan-design-review": {
+    "command": "/plan-design-review",
+    "name": "plan-design-review",
+    "category": "Plan-Mode Reviews",
+    "role": "Principal Product Designer & UX Architect",
+    "description": "Designer's eye plan review — interactive, like CEO and Eng review.",
+    "triggers": [
+      "design plan review",
+      "review ux plan",
+      "check design decisions"
+    ],
+    "path": ".agent/skills/plan-design-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/plan-devex-review": {
+    "command": "/plan-devex-review",
+    "name": "plan-devex-review",
+    "category": "Plan-Mode Reviews",
+    "role": "Head of Developer Experience & SDK Architect",
+    "description": "Interactive developer experience plan review.",
+    "triggers": [
+      "developer experience review",
+      "dx plan review",
+      "check developer onboarding"
+    ],
+    "path": ".agent/skills/plan-devex-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/plan-eng-review": {
+    "command": "/plan-eng-review",
+    "name": "plan-eng-review",
+    "category": "Plan-Mode Reviews",
+    "role": "Principal Software Engineer & Engineering Manager",
+    "description": "Eng manager-mode plan review.",
+    "triggers": [
+      "review architecture",
+      "eng plan review",
+      "check the implementation plan"
+    ],
+    "path": ".agent/skills/plan-eng-review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/plan-tune": {
+    "command": "/plan-tune",
+    "name": "plan-tune",
+    "category": "Plan-Mode Reviews",
+    "role": "Autonomous Tuning Specialist",
+    "description": "\"Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). \"",
+    "triggers": [
+      "tune questions",
+      "stop asking me that",
+      "too many questions",
+      "show my profile",
+      "show my vibe",
+      "developer profile",
+      "turn off question tuning"
+    ],
+    "path": ".agent/skills/plan-tune/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/qa": {
+    "command": "/qa",
+    "name": "qa",
+    "category": "Implementation & Quality",
+    "role": "Lead QA Automation Engineer & Regression Specialist",
+    "description": "Fix browser/API/CLI/job/worker/webhook bugs.",
+    "triggers": [
+      "qa test this",
+      "find bugs on site",
+      "test the site"
+    ],
+    "path": ".agent/skills/qa/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/qa-only": {
+    "command": "/qa-only",
+    "name": "qa-only",
+    "category": "Implementation & Quality",
+    "role": "Independent Verification & QA Auditor",
+    "description": "Report browser/API/CLI/job/worker/webhook bugs.",
+    "triggers": [
+      "qa report only",
+      "just report bugs",
+      "test but dont fix"
+    ],
+    "path": ".agent/skills/qa-only/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/retro": {
+    "command": "/retro",
+    "name": "retro",
+    "category": "Operational & Memory",
+    "role": "Engineering Retrospective Lead",
+    "description": "Weekly engineering retrospective.",
+    "triggers": [
+      "weekly retro",
+      "what did we ship",
+      "engineering retrospective"
+    ],
+    "path": ".agent/skills/retro/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/review": {
+    "command": "/review",
+    "name": "review",
+    "category": "Implementation & Quality",
+    "role": "Staff Code Reviewer & Production Safety Lead",
+    "description": "Pre-landing PR review.",
+    "triggers": [
+      "review this pr",
+      "code review",
+      "check my diff",
+      "pre-landing review"
+    ],
+    "path": ".agent/skills/review/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/scrape": {
+    "command": "/scrape",
+    "name": "scrape",
+    "category": "Browser & Automation",
+    "role": "Web Data Extraction Specialist",
+    "description": "Pull data from a web page through the Aside browser — your real, already signed-in sessions.",
+    "triggers": [
+      "scrape this page",
+      "get data from",
+      "pull from",
+      "extract from",
+      "what is on"
+    ],
+    "path": ".agent/skills/scrape/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/setup-browser-cookies": {
+    "command": "/setup-browser-cookies",
+    "name": "setup-browser-cookies",
+    "category": "Browser & Automation",
+    "role": "Session & Cookie Provisioning Specialist",
+    "description": "Import cookies from your real Chromium browser into the headless browse session.",
+    "triggers": [
+      "import browser cookies",
+      "login to test site",
+      "setup authenticated session"
+    ],
+    "path": ".agent/skills/setup-browser-cookies/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/setup-deploy": {
+    "command": "/setup-deploy",
+    "name": "setup-deploy",
+    "category": "Release & Deploy",
+    "role": "Cloud Infrastructure & Deploy Specialist",
+    "description": "Configure deployment settings for /land-and-deploy.",
+    "triggers": [
+      "configure deploy",
+      "setup deployment",
+      "set deploy platform"
+    ],
+    "path": ".agent/skills/setup-deploy/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/setup-gbrain": {
+    "command": "/setup-gbrain",
+    "name": "setup-gbrain",
+    "category": "Operational & Memory",
+    "role": "Cross-Machine Memory Coordinator",
+    "description": "\"Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. \"",
+    "triggers": [
+      "setup gbrain",
+      "install gbrain",
+      "connect gbrain",
+      "start gbrain",
+      "configure gbrain"
+    ],
+    "path": ".agent/skills/setup-gbrain/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/ship": {
+    "command": "/ship",
+    "name": "ship",
+    "category": "Release & Deploy",
+    "role": "Principal Release Engineer & Gatekeeper",
+    "description": "\"Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. \"",
+    "triggers": [
+      "ship it",
+      "create a pr",
+      "push to main",
+      "deploy this"
+    ],
+    "path": ".agent/skills/ship/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/skillify": {
+    "command": "/skillify",
+    "name": "skillify",
+    "category": "Browser & Automation",
+    "role": "Browser Workflow Codifier",
+    "description": "Codify the most recent successful /scrape flow into a permanent browser-skill on disk.",
+    "triggers": [
+      "skillify",
+      "codify this scrape",
+      "save this scrape",
+      "make this permanent"
+    ],
+    "path": ".agent/skills/skillify/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/spec": {
+    "command": "/spec",
+    "name": "spec",
+    "category": "Plan-Mode Reviews",
+    "role": "Product Systems Architect & Specification Engineer",
+    "description": "Turn vague intent into a precise, executable spec in five phases.",
+    "triggers": [
+      "spec this out",
+      "file an issue",
+      "write up a ticket",
+      "turn this into an issue",
+      "make this a github issue",
+      "turn this into a backlog item"
+    ],
+    "path": ".agent/skills/spec/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/sync-gbrain": {
+    "command": "/sync-gbrain",
+    "name": "sync-gbrain",
+    "category": "Operational & Memory",
+    "role": "Knowledge Graph Synchronizer",
+    "description": "Keep gbrain current with this repo's code and refresh agent search guidance in CLAUDE.md.",
+    "triggers": [
+      "sync gbrain",
+      "refresh gbrain",
+      "reindex repo",
+      "update gbrain"
+    ],
+    "path": ".agent/skills/sync-gbrain/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/test-audit": {
+    "command": "/test-audit",
+    "name": "test-audit",
+    "category": "Implementation & Quality",
+    "role": "Test Architecture Specialist",
+    "description": "Find low-value or duplicate tests and the test-only code they keep alive.",
+    "triggers": [
+      "audit the test suite",
+      "find low-value tests",
+      "prune useless tests"
+    ],
+    "path": ".agent/skills/test-audit/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  },
+  "/unfreeze": {
+    "command": "/unfreeze",
+    "name": "unfreeze",
+    "category": "Safety & Scoping",
+    "role": "Scope Restriction Releaser",
+    "description": "Clear the freeze boundary set by /freeze, allowing edits to all directories again.",
+    "triggers": [
+      "unfreeze edits",
+      "unlock all directories",
+      "remove edit restrictions"
+    ],
+    "path": ".agent/skills/unfreeze/SKILL.md",
+    "tools": [
+      "run_command",
+      "view_file",
+      "replace_file_content",
+      "multi_replace_file_content",
+      "write_to_file",
+      "list_dir",
+      "grep_search",
+      "ask_question"
+    ]
+  }
+}

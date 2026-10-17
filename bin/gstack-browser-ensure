@@ -71,15 +71,26 @@ ok() {
 
 if [ ! -d "$ROOT/node_modules/playwright" ]; then
   [ "$CHECK" -eq 1 ] && fail "playwright is not installed under $ROOT/node_modules" "cd $ROOT && ./setup"
-  command -v bun >/dev/null 2>&1 || fail "playwright is not installed under $ROOT/node_modules and bun is not on PATH" "install Bun, then cd $ROOT && ./setup"
-  log "gstack-browser-ensure: installing node modules (bun install)..."
-  (cd "$ROOT" && { bun install --frozen-lockfile >/dev/null 2>&1 || bun install >/dev/null; }) || fail "bun install failed under $ROOT" "cd $ROOT && bun install, then re-run $0"
+  if command -v bun >/dev/null 2>&1; then
+    log "gstack-browser-ensure: installing node modules (bun install)..."
+    (cd "$ROOT" && { bun install --frozen-lockfile >/dev/null 2>&1 || bun install >/dev/null; }) || fail "bun install failed under $ROOT" "cd $ROOT && bun install, then re-run $0"
+  elif command -v npm >/dev/null 2>&1; then
+    log "gstack-browser-ensure: installing node modules (npm install)..."
+    (cd "$ROOT" && npm install --silent >/dev/null 2>&1) || fail "npm install failed under $ROOT" "cd $ROOT && npm install, then re-run $0"
+  else
+    fail "playwright is not installed under $ROOT/node_modules and neither bun nor npm is on PATH" "install Node.js/npm or Bun, then cd $ROOT && ./setup"
+  fi
 fi
 
 probe
 [ "$PROBE_RC" -eq 0 ] && ok
 [ "$CHECK" -eq 1 ] && fail "Chromium did not launch via $ENGINE ($(first_line "$PROBE_OUT"))" "$ROOT/bin/gstack-browser-ensure (installs Chromium; ~115 MiB)"
-BUN=$(command -v bun 2>/dev/null) || fail "Chromium is not installed and bun is not on PATH to install it" "install Bun, then re-run $0"
+
+INSTALL_RUNNER=""
+if command -v bun >/dev/null 2>&1; then INSTALL_RUNNER="bun x"
+elif command -v npx >/dev/null 2>&1; then INSTALL_RUNNER="npx"
+elif command -v python >/dev/null 2>&1; then INSTALL_RUNNER="python -m"
+else fail "Chromium is not installed and neither bun, npx, nor python is on PATH to install it" "install Node.js or Bun, then re-run $0"; fi
 
 # Same lock ./setup takes (#2136), so two installs never race on the cache.
 LOCK="${TMPDIR:-/tmp}/gstack-playwright-install.lock"
@@ -103,13 +114,13 @@ log "gstack-browser-ensure: installing Playwright Chromium (one-time, ~115 MiB; 
 started=$(date +%s)
 (
   cd "$ROOT"
-  if [ -n "$OVERRIDE" ]; then PLAYWRIGHT_HOST_PLATFORM_OVERRIDE="$OVERRIDE" "$BUN" x playwright install $WITH_DEPS chromium
-  else "$BUN" x playwright install $WITH_DEPS chromium; fi
+  if [ -n "$OVERRIDE" ]; then PLAYWRIGHT_HOST_PLATFORM_OVERRIDE="$OVERRIDE" $INSTALL_RUNNER playwright install $WITH_DEPS chromium
+  else $INSTALL_RUNNER playwright install $WITH_DEPS chromium; fi
 ) </dev/null >&2 &
 pid=$!
 waited=0
 while kill -0 "$pid" 2>/dev/null; do
-  if [ "$waited" -ge "$TIMEOUT" ]; then kill "$pid" 2>/dev/null; wait "$pid" 2>/dev/null; fail "$BUN x playwright install chromium exceeded ${TIMEOUT}s" "raise GSTACK_PLAYWRIGHT_INSTALL_TIMEOUT=<seconds> and re-run $0"; fi
+  if [ "$waited" -ge "$TIMEOUT" ]; then kill "$pid" 2>/dev/null; wait "$pid" 2>/dev/null; fail "$INSTALL_RUNNER playwright install chromium exceeded ${TIMEOUT}s" "raise GSTACK_PLAYWRIGHT_INSTALL_TIMEOUT=<seconds> and re-run $0"; fi
   sleep 1; waited=$((waited + 1))
 done
 wait "$pid"; rc=$?
